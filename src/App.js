@@ -1,13 +1,17 @@
 import React from 'react'
-//import Slider from './components/Slider.js'
-
-
+import addEffectOnScroll from './addEffectOnScroll'
 export default class App extends React.Component {
+  
   constructor() {
     super()
     this.state = {}
   }
+
   render() {
+    window.addEventListener('scroll', () => addEffectOnScroll('fade-out', 'line'))
+    window.addEventListener('scroll', () => addEffectOnScroll('header-container-minimized', 'header-container-start'))
+    window.addEventListener('scroll', () => addEffectOnScroll('fade-in', 'info-container'))
+    window.addEventListener('scroll', () => addEffectOnScroll('fade-in', 'info-card'))
     return (
       // ~Structure~
       // Name
@@ -17,6 +21,7 @@ export default class App extends React.Component {
       // Contact
       <>
         <div id="container">
+
           <div className="header-container-start">
             <div id="name-container">
               <h1 id="name-text">opallo</h1>
@@ -26,7 +31,10 @@ export default class App extends React.Component {
             </div>
             <div id="line" className="line"></div>
           </div>
-          <div className="info-container">
+
+
+
+          {/* <div className="info-container">
             <div className="info-card">
               <div className="info-text">
                 World-class web development services.
@@ -39,10 +47,10 @@ export default class App extends React.Component {
             </div>
             <div className="info-card">
               <div className="info-text">
-                Custom made to your liking.
+                Just wow.
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </>
     )
